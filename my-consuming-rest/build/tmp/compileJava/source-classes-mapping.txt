@@ -1,12 +1,12 @@
-com/heipl/rest/template/Value.java
- com.heipl.rest.template.Value
+com/heipl/rest/consumer/ScheduledTask.java
+ com.heipl.rest.consumer.ScheduledTask
 com/heipl/rest/template/Quote.java
  com.heipl.rest.template.Quote
+com/heipl/rest/template/Value.java
+ com.heipl.rest.template.Value
+com/heipl/rest/consumer/CommandLineRunner.java
+ com.heipl.rest.consumer.CommandLineRunner
 com/heipl/rest/consumer/RestTemplateService.java
  com.heipl.rest.consumer.RestTemplateService
 com/heipl/rest/ConsumingRestApplication.java
  com.heipl.rest.ConsumingRestApplication
-com/heipl/rest/consumer/CommandLineRunner.java
- com.heipl.rest.consumer.CommandLineRunner
-com/heipl/rest/consumer/ScheduledTask.java
- com.heipl.rest.consumer.ScheduledTask
