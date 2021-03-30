@@ -3,6 +3,9 @@ package com.heipl.rest.template;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
+/**
+ * Json mapping object
+ */
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Value {

@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.util.Optional;
 
+/**
+ * Json mapping object for Quotes. Contains an inner Json, {@link Value}
+ */
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Quote {

@@ -12,6 +12,10 @@ public class RestTemplateService {
     public static final String QUOTE_URL = "https://quoters.apps.pcfone.io/api/random";
     private final RestTemplate restTemplate;
 
+    /**
+     * Obtain new quote from {@link #QUOTE_URL}
+     * @return new {@link Quote}
+     */
     public Quote getNewQuote() {
         return restTemplate.getForObject(QUOTE_URL, Quote.class);
     }

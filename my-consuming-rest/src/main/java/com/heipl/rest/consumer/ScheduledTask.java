@@ -7,9 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+/**
+ * Obtains new {@link Quote} at fixed interval
+ */
 @Component
 public class ScheduledTask {
-    public static final Logger log = LoggerFactory.getLogger(ScheduledTask.class);
+    public static final Logger LOGGER = LoggerFactory.getLogger(ScheduledTask.class);
 
     @Autowired
     private RestTemplateService restTemplateService;
@@ -17,8 +20,8 @@ public class ScheduledTask {
     @Scheduled(fixedRate = 15_000)
     public void printQuoteAtFixedRate() {
         final Quote quote = restTemplateService.getNewQuote();
-        log.info(quote.toString());
-        log.info("\n" + quote.getActualQuote());
+        LOGGER.info(quote.toString());
+        LOGGER.info("\n" + quote.getActualQuote());
     }
 
 }
