@@ -13,11 +13,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 @SpringBootApplication
 public class RelationalDataAccessApplication implements CommandLineRunner {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(RelationalDataAccessApplication.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(RelationalDataAccessApplication.class);
 
     @Autowired
     JdbcTemplate jdbcTemplate;
