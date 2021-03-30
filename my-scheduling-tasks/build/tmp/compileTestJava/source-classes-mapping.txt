@@ -1,0 +1,4 @@
+com/heipl/schedulingtask/ScheduledTasksTest.java
+ com.heipl.schedulingtask.ScheduledTasksTest
+com/heipl/schedulingtask/SchedulingTasksApplicationTest.java
+ com.heipl.schedulingtask.SchedulingTasksApplicationTest
