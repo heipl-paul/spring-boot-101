@@ -26,29 +26,24 @@ public class FileUploadController {
     }
 
     @GetMapping("/")
-    public String listUploadedFiles(final Model model) throws IOException {
-        final Function<Path, UriComponentsBuilder> mappingFunction = path -> {
+    public String listUploadedFiles(final Model model) {
+
+        //@formatter:off
+        final Function<Path, String> mappingFunction = path -> {
             return MvcUriComponentsBuilder.fromMethodName(
                     FileUploadController.class,
                     "serveFile",
                     path.getFileName().toString()
-            );
-        };
-
-        final Stream<UriComponentsBuilder> uriComponentsBuilderStream = storageService.loadAll()
-                                                                                      .map(mappingFunction::apply);
-        final List<String> filesList = storageService.loadAll().map(
-                path -> MvcUriComponentsBuilder.fromMethodName(
-                            FileUploadController.class,
-                            "serveFile",
-                            path.getFileName().toString()
-            ).build()
+            )
+            .build()
             .toUri()
-            .toString())
-            .collect(Collectors.toList());
+            .toString();
+        }; //@formatter:on
 
+        final List<String> filesList = storageService.loadAll()
+                                                     .map(mappingFunction::apply)
+                                                     .collect(Collectors.toList());
         model.addAttribute("files", filesList);
-
         return "uploadForm";
     }
 
