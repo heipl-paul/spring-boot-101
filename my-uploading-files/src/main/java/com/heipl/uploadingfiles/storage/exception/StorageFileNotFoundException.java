@@ -1,4 +1,4 @@
-package com.heipl.uploadingfiles.storage;
+package com.heipl.uploadingfiles.storage.exception;
 
 /**
  * @see StorageException

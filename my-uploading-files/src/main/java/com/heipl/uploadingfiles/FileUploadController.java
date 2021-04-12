@@ -1,6 +1,6 @@
 package com.heipl.uploadingfiles;
 
-import com.heipl.uploadingfiles.storage.StorageFileNotFoundException;
+import com.heipl.uploadingfiles.storage.exception.StorageFileNotFoundException;
 import com.heipl.uploadingfiles.storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -24,16 +24,15 @@ public class FileUploadController {
     private final StorageService storageService;
 
     //@formatter:off
-    private final Function<Path, String> pathMappingFunction = path -> {
-        return MvcUriComponentsBuilder.fromMethodName(
+    private final Function<Path, String> pathMappingFunction = path ->
+        MvcUriComponentsBuilder.fromMethodName(
                 FileUploadController.class,
                 "serveFile",
                 path.getFileName().toString()
         )
         .build()
         .toUri()
-        .toString();
-    }; //@formatter:on
+        .toString(); //@formatter:on
 
     @Autowired
     public FileUploadController(final StorageService storageService) {
@@ -44,7 +43,7 @@ public class FileUploadController {
     public String listUploadedFiles(final Model model) {
 
         final List<String> filesList = storageService.loadAll()
-                                                     .map(pathMappingFunction::apply)
+                                                     .map(pathMappingFunction)
                                                      .collect(Collectors.toList());
         model.addAttribute("files", filesList);
         return "uploadForm";
