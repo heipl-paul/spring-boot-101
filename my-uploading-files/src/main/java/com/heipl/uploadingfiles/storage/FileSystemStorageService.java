@@ -41,6 +41,9 @@ public class FileSystemStorageService implements StorageService {
     public void store(final MultipartFile file) {
         try {
             if (file.isEmpty()) {
+                // Why did the tutorial do this? I cannot say
+                // It crashes the entire application with no way to return
+                // GG tutorial guy, GG
                 throw new StorageException("Failed to store empty file.");
             }
 
