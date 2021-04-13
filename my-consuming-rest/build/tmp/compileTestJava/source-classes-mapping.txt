@@ -1,2 +1,0 @@
-com/heipl/rest/ConsumingRestApplicationTest.java
- com.heipl.rest.ConsumingRestApplicationTest

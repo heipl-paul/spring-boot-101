@@ -1,4 +1,0 @@
-com/heipl/relationaldataaccess/Customer.java
- com.heipl.relationaldataaccess.Customer
-com/heipl/relationaldataaccess/RelationalDataAccessApplication.java
- com.heipl.relationaldataaccess.RelationalDataAccessApplication
